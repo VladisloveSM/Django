@@ -1,0 +1,73 @@
+# Django-specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.sqlite3
+media/
+staticfiles/
+
+# Virtual environments
+djvenv/
+venv/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# Python bytecode and caches
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+*.egg-info/
+*.egg
+
+# Django migrations (optional, uncomment if you don't want to track migrations)
+# */migrations/*.py
+# */migrations/__init__.py
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+local_settings.py
+settings.py
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+
+# OS and miscellaneous
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Testing and profiling
+htmlcov/
+.tox/
+.nox/
+.cache/
+*.prof
+
+# Node.js (if using frontend tools)
+node_modules/
+npm-debug.log
+yarn-error.log
