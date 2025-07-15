@@ -4,5 +4,5 @@ from women import views
 
 urlpatterns = [
     path('', views.index),
-    path('cat/', views.categories),
+    path('cat/<int:cat_id>/', views.categories),
 ]

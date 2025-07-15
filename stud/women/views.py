@@ -6,6 +6,6 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Hello, world. You're at the women index.")
 
-def categories(request):
-    return HttpResponse("<h1>Статьи по категориям</h1>")
+def categories(request, cat_id):
+    return HttpResponse(f"<h1>Статьи по категориям</h1><p>id: {cat_id}</p>")
 
