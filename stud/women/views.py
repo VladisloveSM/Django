@@ -3,6 +3,13 @@ from django.http import Http404, HttpResponse, HttpResponseNotFound, HttpRespons
 from django.urls import reverse
 from django.template.loader import render_to_string
 
+menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
+
+class MyClass:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
 # Create your views here.
 
 def index(request):
@@ -10,11 +17,17 @@ def index(request):
     # return HttpResponse(t)
     data = {
         'title': 'Главная страница',
+        'menu': menu,
+        'float': 28.56,
+        'lst': [1, 2, 'abc', True],
+        'set': {1, 2, 3, 4, 5, 6},
+        'dict': {'key_1': 'value_1', 'key_2': 'value_2'},
+        'obj': MyClass(10, 20),
     }
     return render(request, 'women/index.html', data)
 
 def about(request):
-    return render(request, 'women/about.html', {'title': 'О сайте'})
+    return render(request, 'women/about.html', {'title': 'О сайте', 'menu': menu})
 
 def categories(request, cat_id):
     return HttpResponse(f"<h1>Статьи по категориям</h1><p>id: {cat_id}</p>")
