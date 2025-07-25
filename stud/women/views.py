@@ -6,6 +6,12 @@ from django.template.defaultfilters import slugify
 
 menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
 
+data_db = [
+    { 'id': 1, 'title': 'Angelina Golie', 'content': 'Biography of Angelina Golie', 'is_published': True },
+    { 'id': 2, 'title': 'Jennifer Aniston', 'content': 'Biography of Jennifer Aniston', 'is_published': True },
+    { 'id': 3, 'title': 'Scarlett Johansson', 'content': 'Biography of Scarlett Johansson', 'is_published': False },
+]
+
 class MyClass:
     def __init__(self, a, b):
         self.a = a
@@ -17,14 +23,9 @@ def index(request):
     # t = render_to_string("women/index.html")
     # return HttpResponse(t)
     data = {
-        'title': 'главная страница',
+        'title': 'Главная страница',
         'menu': menu,
-        'float': 28.56,
-        'lst': [1, 2, 'abc', True],
-        'set': {1, 2, 3, 4, 5, 6},
-        'dict': {'key_1': 'value_1', 'key_2': 'value_2'},
-        'obj': MyClass(10, 20),
-        'url': slugify('The main page'),
+        'posts': data_db,
     }
     return render(request, 'women/index.html', data)
 
